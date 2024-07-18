@@ -14,15 +14,15 @@ def hoofdmenu():
             gebruikers_invoer = -1
 
         if gebruikers_invoer == '1':
-            print('Stadsinformatie: ')
+            print('Stadsinformatie\n')
         elif gebruikers_invoer == '2':
-            print('Steden vergelijken')
+            print('Steden vergelijken\n')
         elif gebruikers_invoer == '3':
-            print('Top 5')
+            print('Top 5\n')
         elif gebruikers_invoer == '0':
             print('Bedankt en tot ziens')
             break
         else:
-            print('Ongeldige keuze, probeer het opnieuw')
+            print('Ongeldige keuze, probeer het opnieuw\n')
 
 # hoofdmenu() anders wordt dit automatisch uitgevoerd

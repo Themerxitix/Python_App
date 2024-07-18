@@ -4,6 +4,7 @@
 from menu import hoofdmenu
 
 def app():
+
     print(f'--------------------------------')
     print('Welkom bij de Informatie App!\n--------------------------------\n')
     hoofdmenu()
