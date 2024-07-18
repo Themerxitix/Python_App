@@ -1,5 +1,12 @@
-# dit wordt de homepagina van de applicatie
+# main bestand
+#importeren van de hoofdmenu
 
-# Menu
+from menu import hoofdmenu
 
-print("Welkom")
+def app():
+    print(f'--------------------------------')
+    print('Welkom bij de Informatie App!\n--------------------------------\n')
+    hoofdmenu()
+
+if __name__ == "__main__":
+    app()
