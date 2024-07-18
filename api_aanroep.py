@@ -12,17 +12,22 @@ def stads_data(stads_naam):
         "limit": 3
     }
 
-    response = requests.get(url, params=params)
+    # response = requests.get(url, params=params)
     try:
+        response = requests.get(url, params=params)
         if response.status_code == 200:
             response = response.json()
             #dataset results word teruggestuurd
             # print(response['results'])
             stad_resultaat = response['results']
             # print(resultaat)
+            #print(response)
+            if not stad_resultaat:
+                print(f"Het opgegeven stad is niet gevonden: '{stads_naam}'")
             return stad_resultaat
+
     except requests.RequestException as e:
-        print(f'Fout bij het ophalen van stadsgegeven: {e}')
+        print(f'Er is een fout opgetreden bij het ophalen van de : {e}')
 
 # stad_resultaat = stads_data('')
 #
