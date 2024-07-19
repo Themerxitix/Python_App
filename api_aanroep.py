@@ -8,7 +8,7 @@ def stads_data(stads_naam):
 
     params = {
         "field": "name",
-         "where": f"name like \"{stads_naam}\"",
+        "where": f"name like \"{stads_naam}\"",
         "limit": 3
     }
 

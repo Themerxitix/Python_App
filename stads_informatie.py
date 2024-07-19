@@ -1,5 +1,4 @@
 #importeer de api
-
 from api_aanroep import stads_data, financieel_data
 
 def toon_stads_info():
@@ -11,7 +10,7 @@ def toon_stads_info():
 
     if steden:
         for stad in steden:
-            print(f"\nInformatie over de stade: {stad['name']}:")
+            print(f"\nInformatie over de stad: {stad['name']}")
             print(f"Land: {stad['cou_name_en']}")
             print(f"Aantal inwoners: {stad['population']}")
 
@@ -20,7 +19,7 @@ def toon_stads_info():
                 economische_data = financieel_data(stad['country_code'])
                 if economische_data:
                     # Toon bruto binnenlands product (BBP) daarnaast ook uit welke jaar deze gegevens zijn
-                    print(f"BBP per hoofd van de bevolking: ${economische_data['value']:.2f} (Jaar: {economische_data['date']})")
+                    print(f"BBP per hoofd van de bevolking: ${economische_data['value']:,.2f} (Jaar: {economische_data['date']})")
                 else:
                     print("BBP is niet beschikbaar.")
             except KeyError:
