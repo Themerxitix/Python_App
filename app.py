@@ -1,4 +1,3 @@
-# main bestand
 #importeren van de hoofdmenu
 
 from menu import hoofdmenu

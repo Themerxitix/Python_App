@@ -1,9 +1,10 @@
-#importeer de api
+
 from api_aanroep import stads_data, financieel_data
 
 #functie aanmaken die de informatie geeft over de stad
 def toon_stad_info(stad_naam, stad_data):
-    print(f"\nInformaite over {stad_data['name']}:")
+    print('-----------------------------------------------------')
+    print(f"Informaite over {stad_data['name']}:")
     print(f"Land: {stad_data['cou_name_en']}")
     print(f"Inwoners: {stad_data['population']:,}")
 
@@ -21,18 +22,20 @@ def vergekijk_bbp(eerste_stad_data, tweede_stad_data):
     if eerste_eco_data and tweede_eco_data:
         if eerste_eco_data['value'] > tweede_eco_data['value']:
             bbp_verschil = eerste_eco_data['value'] - tweede_eco_data['value']
-            print(f"\nBBP vergelijking:")
+            print('--------------------------------------------------')
+            print(f"BBP vergelijking:")
             print(f"Verschil in BBP per hoofd: ${bbp_verschil:,.2f}")
-            print(f"{eerste_stad_data['name']} heeft een hoger BBP per hoofd.")
+            print(f"{eerste_stad_data['name']} heeft een hoger BBP.")
         elif eerste_eco_data['value'] < tweede_eco_data['value']:
             bbp_verschil = tweede_eco_data['value'] - eerste_eco_data['value']
-            print(f"\nBBP vergelijking:")
+            print('--------------------------------------------------')
+            print(f"BBP vergelijking:")
             print(f"Verschil in BBP per hoofd: ${bbp_verschil:,.2f}")
-            print(f"{tweede_stad_data['name']} heeft een hoger BBP per hoofd.")
+            print(f"{tweede_stad_data['name']} heeft een hoger BBP.")
         else:
+            print('--------------------------------------------------')
             print("Beide steden hebben hetzelfde BBP per hoofd.")
-    else:
-        print("\nBBP vergelijking is niet mogelijk.")
+
 
 def vergelijken():
     # input van gebruiker
@@ -44,9 +47,10 @@ def vergelijken():
     tweede_steden = stads_data(tweede_stad)
 
     if not eerste_steden:
-        print(f"Geen gegevens gevonden voor {eerste_stad}")
+        print('--------------------------------------------------')
+        print(f"Het eerste stad '{eerste_stad}' is niet gevonden. ")
     if not tweede_steden:
-        print(f"Geen gegevens gevonden voor {tweede_stad}")
+        print(f"Het tweede stad '{tweede_stad}' is niet gevonden. ")
 
     if eerste_steden and tweede_steden:
         eerste_stad_data = eerste_steden[0]
@@ -56,7 +60,8 @@ def vergelijken():
         toon_stad_info(tweede_stad, tweede_stad_data)
         vergekijk_bbp(eerste_stad_data, tweede_stad_data)
     else:
+        print('--------------------------------------------------')
         print("Vergelijking niet mogelijk.")
 
-if __name__ == "__main__":
-    vergelijken()
+# if __name__ == "__main__":
+#     vergelijken()

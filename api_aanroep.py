@@ -22,12 +22,12 @@ def stads_data(stads_naam):
             stad_resultaat = response['results']
             # print(resultaat)
             #print(response)
-            if not stad_resultaat:
-                print(f"Het opgegeven stad is niet gevonden: '{stads_naam}'")
+            # if not stad_resultaat:
+            #     print(f"Het opgegeven stad is niet gevonden: '{stads_naam}'")
             return stad_resultaat
 
     except requests.RequestException as e:
-        print(f'Er is een fout opgetreden bij het ophalen van de : {e}')
+        print(f'Fout bij het ophalen van stadsgegeven: {e}')
 
 # stad_resultaat = stads_data('')
 #
@@ -40,7 +40,8 @@ def financieel_data(landcode):
     params = {
         "format": "json",  # uit de API website, onder kopje respons format, wordt aangegeven dat alle requests in XML worden teruggestuurd, daarom dit format wijziging.
         "per_page": "1",  # Vraagt slechts om een resultaat
-        "date": "2020:2024"
+        "date": "2020:2024",
+        # "country": "value"
     }
 
     response = requests.get(url, params=params)
@@ -52,9 +53,8 @@ def financieel_data(landcode):
         if len(response) > 1 and response[1]:
             # print(response[1][0])
             financiele_resultaat = response[1][0]
+            #land_resultaat = response[1][0]['country']['value']
             return financiele_resultaat
-        else:
-            print('Geen economische gegevens gevonden!')
 
     except requests.RequestException as e:
         print(f'Fout bij het ophalen van stadsgegeven: {e}')
@@ -62,3 +62,30 @@ def financieel_data(landcode):
 # financieel_data('NL')
 # financiele_resultaat = financieel_data('NL')
 # print(financiele_resultaat)
+
+def steden_per_land(land_naam):
+
+    url = "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/geonames-all-cities-with-a-population-1000/records"
+    params = {
+        "where": f"cou_name_en like '{land_naam}'",
+        "limit": 100
+    }
+    try:
+        response = requests.get(url, params=params)
+        if response.status_code == 200:
+            response = response.json()
+            sted_resultaat = response['results']
+            return sted_resultaat
+    except requests.RequestException as e:
+        print(f'Fout bij het ophalen van stadsgegeven: {e}')
+    return None
+
+# if __name__ == "__main__":
+#     land = input("Voer een landnaam in: ")
+#     steden = steden_per_land(land)
+#     if steden:
+#         print(f"Gevonden steden in {land}:")
+#         for stad in steden:
+#             print(f"- {stad['name']} (Inwoners: {stad['population']})")
+#     else:
+#         print(f"Geen steden gevonden voor {land}")
