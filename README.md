@@ -22,8 +22,6 @@ Er zijn in totaal drie hoofd functionaliteiten gebruikt. Namelijk de functie die
 
 ## Installatie
 Om de benodigde packages te installeren, voer het volgende commando uit:
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 Dit zal alle benodigde dependencies voor het project installeren.
 
-## github 
-_https://github.com/Themerxitix/Python_git_
