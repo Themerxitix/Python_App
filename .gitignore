@@ -22,3 +22,7 @@
 
  # Temporary files
  *.tmp
+
+ # Explicitly ignore these directories
+ /.idea/
+ /__pycache__/
