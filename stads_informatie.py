@@ -17,10 +17,8 @@ def toon_stads_info():
 
             try:
                 #  economische gegevens worden opgehaald
-                print(f"Ophalen van economische data voor landcode: {stad['country_code']}")
                 economische_data = financieel_data(stad['country_code'])
-                print(f"Ontvangen economische data: {economische_data}")
-                if economische_data and 'value' in economische_data and economische_data['value'] is not None:
+                if economische_data:
                     # Toon bruto binnenlands product (BBP) daarnaast ook uit welke jaar deze gegevens zijn
                     print(f"BBP per hoofd van de bevolking: ${economische_data['value']:,.2f}, (Jaar: {economische_data['date']})")
                 else:
@@ -31,5 +29,5 @@ def toon_stads_info():
         print(f"Het opgegeven stad '{voer_stad_in}' is niet gevonden.")
 
 
-if __name__ == "__main__":
-    toon_stads_info()
+# if __name__ == "__main__":
+#     toon_stads_info()
