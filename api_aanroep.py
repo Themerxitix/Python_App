@@ -60,7 +60,6 @@ def financieel_data(landcode):
         print(f'Fout bij het ophalen van stadsgegeven: {e}')
 
 # financieel_data('NL')
-# financiele_resultaat = financieel_data('NL')
 # print(financiele_resultaat)
 
 def steden_per_land(land_naam):
