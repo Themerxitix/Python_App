@@ -1,4 +1,5 @@
 #importeren van de hoofdmenu
+#importeren van de hoofdmenu
 
 from menu import hoofdmenu
 
@@ -10,3 +11,4 @@ def app():
 
 if __name__ == "__main__":
     app()
+
