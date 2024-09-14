@@ -20,8 +20,3 @@ Er zijn in totaal drie hoofd functionaliteiten gebruikt. Namelijk de functie die
 2. Zorg ervoor dat Python 3 op uw systeem is geïnstalleerd.
 3. Voer `app.py` uit om de applicatie te starten.
 
-## Installatie
-Om de benodigde packages te installeren, voer het volgende commando uit:
-`pip install -r requirements.txt`
-Dit zal alle benodigde dependencies voor het project installeren.
-
