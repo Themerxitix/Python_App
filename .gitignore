@@ -1,5 +1,8 @@
  # PyCharm
  .idea/
+ *.iml
+ *.ipr
+ *.iws
 
  # Python
  __pycache__/
@@ -13,3 +16,9 @@
  # OS generated files
  .DS_Store
  Thumbs.db
+
+ # Logs
+ *.log
+
+ # Temporary files
+ *.tmp
