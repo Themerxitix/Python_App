@@ -17,7 +17,5 @@ Er zijn in totaal drie hoofd functionaliteiten gebruikt. Namelijk de functie die
 
 ## Installatie
 1. Clone de repository of download de bronbestanden.
-2. Zorg ervoor dat Python 3 op uw systeem is geïnstalleerd.
-3. Voer `app.py` uit om de applicatie te starten.
-4. install requests met `pip install requests`
-
+2. Voer `app.py` uit om de applicatie te starten.
+3. install requests met `pip install requests`
