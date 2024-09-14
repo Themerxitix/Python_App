@@ -38,7 +38,7 @@ def financieel_data(landcode):
     url = f'http://api.worldbank.org/v2/country/{landcode}/indicator/NY.GDP.PCAP.CD'
 
     params = {
-        "format": "json",  # uit de API website, onder kopje respons format, wordt aangegeven dat alle requests in XML worden teruggestuurd, daarom dit format wijziging.
+        "format": "json",  # uit de API website, onder kopje respons format, daarom dit format wijziging.
         "per_page": "1",  # Vraagt slechts om een resultaat
         "date": "2020:2024",
         # "country": "value"
@@ -50,7 +50,7 @@ def financieel_data(landcode):
         if response.status_code == 200:
             response = response.json()
 
-        if len(response) > 1 and response[1]:
+        if isinstance(response, list)and len(response) > 1 and response[1]:
             # print(response[1][0])
             financiele_resultaat = response[1][0]
             #land_resultaat = response[1][0]['country']['value']
