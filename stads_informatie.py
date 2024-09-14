@@ -28,7 +28,6 @@ def toon_stads_info():
     else:
         print(f"Het opgegeven stad '{voer_stad_in}' is niet gevonden.")
 
-#test code voor de functie toon_stads_info
 
 # if __name__ == "__main__":
 #     toon_stads_info()
